@@ -1,108 +1,53 @@
-# Web Developer
+# Yurii Myronov
 
-I am a professional Web Developer with expertise in modern technologies for building efficient, scalable, and maintainable web applications. Below is an overview of the technologies I work with:
+**Lead Developer @ [Dlubal Software](https://www.dlubal.com)** · Prague, Czechia 🇨🇿
 
-## Databases
+Full-stack engineer focused on **clean architecture**, **type-safe end-to-end systems**, and **self-hosted infrastructure**. I write production backends in **Go** and **Python**, build reactive frontends with **Nuxt / Vue**, and ship everything through **Docker + GitHub Actions** onto my own **Cloudflare-fronted VPS**. Lately I've been wiring my apps together with the **Model Context Protocol (MCP)** so an LLM can drive them as tools.
 
-I have experience with both relational and NoSQL databases, which allows me to choose the right tool for any project:
+---
 
-- A lightweight, file-based database for smaller-scale applications.
-- A powerful NoSQL database for flexible and scalable data storage.
+### What I care about
 
-  ![MongoDB](https://img.shields.io/badge/mongodb-003B57?style=for-the-badge&logo=mongodb&logoColor=white)
+- **Architecture that's enforced, not aspirational** — Ports & Adapters / DDD, with test suites that fail the build when a dependency rule is broken.
+- **Typed boundaries everywhere** — Zod / Pydantic at the edges, types inferred end-to-end, no `any`.
+- **Owning the whole cycle** — from a use-case class to a multi-stage Docker image, a GHCR push, a CI gate, and a container running behind a Cloudflare tunnel.
 
-- A robust relational database system with advanced querying capabilities.
+### Tech
 
-  ![SQLite](https://img.shields.io/badge/sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-  ![PostgreSQL](https://img.shields.io/badge/postgresql-336791?style=for-the-badge&logo=PostgreSQL&logoColor=white)
+![Go](https://img.shields.io/badge/go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-## BackEnd Development
+![FastAPI](https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Django](https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![Gin](https://img.shields.io/badge/gin-008ECF?style=for-the-badge&logo=gin&logoColor=white)
+![Nuxt](https://img.shields.io/badge/nuxt-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white)
+![Vue](https://img.shields.io/badge/vue-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
 
-I specialize in designing and implementing backend systems with a focus on performance and security:
+![PostgreSQL](https://img.shields.io/badge/postgresql-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Prisma](https://img.shields.io/badge/prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 
-- My primary programming language for backend development.
+![Docker](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+![Nginx](https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github_actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 
-  ![Python](https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=Python&logoColor=white)
+### Featured projects
 
-- A high-level Python framework for building scalable web applications.
+| Project | Stack | What it shows |
+|---|---|---|
+| **[Library](https://github.com/Meizuno/Library)** | Python · FastAPI · SQLAlchemy | Clean Architecture / DDD reference — 400+ tests that *enforce* the dependency rule, contract-tested ports, Redis caching, structured logging |
+| **[Docket](https://github.com/Meizuno/Docket)** | Python · FastAPI · Postgres | Pull-based task queue with lease + heartbeat crash recovery, `FOR UPDATE SKIP LOCKED` concurrency proven via testcontainers — no Redis/Celery needed |
+| **[AI Chat](https://github.com/Meizuno/AIChat)** | Nuxt · OpenAI · MCP | A chat hub that drives my other apps (Notes, Money Manager, Recipes) as **MCP tools** — streaming completions, per-user MCP connection pooling, self-hosted Whisper for voice |
+| **[Notes](https://github.com/Meizuno/Notes)** ([demo](https://notes.meizuno.com/)) | Nuxt · Prisma · Postgres | Self-hosted notes vault — per-note visibility (private/protected/public), graph + folder views, trigram full-text search, and one data-access layer shared across HTTP, MCP, and SSR |
+| **[Authentication](https://github.com/Meizuno/Authentication)** | Go · Gin · JWT | Auth microservice: JWT + refresh-token rotation, Google OAuth, clean layered architecture — one service all my apps delegate to |
 
-  ![Django](https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=Django&logoColor=white)
+### Infrastructure
 
-- A modern Python framework for developing high-performance APIs.
+Everything runs on a self-managed Debian VPS: ~15 Docker services across isolated Compose stacks, a single Go auth service, shared PostgreSQL, a self-hosted **SeaweedFS** S3-compatible cluster, Cloudflare Zero-Trust tunnels for ingress, and Uptime-Kuma for monitoring. Images built by GitHub Actions, pushed to GHCR, pulled on deploy. Also comfortable with Cloudflare **Workers, Pages, D1, and R2**.
 
-  ![FastAPI](https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=FastAPI&logoColor=white)
+### Reach me
 
-## API Development
-
-I have a deep understanding of API architectures and standards:
-
-- Expertise in creating reliable RESTful APIs.
-
-  ![REST](https://img.shields.io/badge/rest_api-F06529?style=for-the-badge&logo=json&logoColor=white)
-
-- Experience in building flexible APIs for specific data queries.
-
-  ![GraphQL](https://img.shields.io/badge/graphql-E10098?style=for-the-badge&logo=GraphQL&logoColor=white)
-
-- Skilled in developing high-speed, cross-platform APIs.
-
-  ![gRPC](https://img.shields.io/badge/grpc-0F9D58?style=for-the-badge&logo=gRPC&logoColor=white)
-
-## Caching
-
-I optimize application performance using caching techniques:
-
-- Used for caching, session management, and real-time data storage.
-
-  ![Redis](https://img.shields.io/badge/redis-DC382D?style=for-the-badge&logo=Redis&logoColor=white)
-
-## FrontEnd Development
-
-I build modern, responsive, and intuitive user interfaces using the following technologies:
-
-- My go-to framework for building dynamic and reactive web applications.
-
-  ![Vue.js](https://img.shields.io/badge/vue-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
-
-- Used for creating cross-platform and mobile-ready applications.
-
-  ![Quasar](https://img.shields.io/badge/quasar-1976D2?style=for-the-badge&logo=quasar&logoColor=white)
-
-- Perfect for server-side rendered (SSR) applications and static websites.
-
-  ![Nuxt.js](https://img.shields.io/badge/nuxt-00C58E?style=for-the-badge&logo=nuxtdotjs&logoColor=white)
-
-## Testing
-
-I ensure code reliability and maintainability with rigorous testing methods:
-
-- Automating API testing workflows.
-
-  ![Newman](https://img.shields.io/badge/newman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-
-- Writing unit and integration tests for robust software.
-
-  ![Pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
-
-## DevOps
-
-I streamline development and deployment workflows with DevOps tools:
-
-- Skilled in containerizing applications for consistent environments.
-
-  ![Docker](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
-- Expertise in automating testing and deployment pipelines.
-
-  ![GitLab CI/CD](https://img.shields.io/badge/gitlab_ci/cd-FCA121?style=for-the-badge&logo=gitlab&logoColor=white)
-
-- Creating automated workflows for building, testing, and deployment.
-
-  ![Github Actions](https://img.shields.io/badge/github_actions-2088FF?style=for-the-badge&logo=github&logoColor=white)
-
-- Proficient in configuring and optimizing Nginx for load balancing, reverse proxying, and serving web applications.
-
-  ![Nginx](https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
-
-## Summary
-With a versatile tech stack and a commitment to high-quality development, I bring comprehensive expertise to every project. From designing APIs and optimizing performance to building full-stack applications and automating deployments, I am dedicated to delivering top-notch solutions for your web development needs.
+[![Portfolio](https://img.shields.io/badge/portfolio-meizuno.com-000000?style=for-the-badge&logo=safari&logoColor=white)](https://meizuno.com/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yurii-myronov-694b99249/)
