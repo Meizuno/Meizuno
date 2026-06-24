@@ -80,6 +80,7 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 | **[AI Chat](https://github.com/Meizuno/AIChat)** | Nuxt · OpenAI · MCP | LLM chat hub that drives my other apps as **MCP tools** — streaming completions, per-user connection pooling |
 | **[Authentication](https://github.com/Meizuno/Authentication)** | Go · Gin · JWT | Auth microservice: JWT + refresh-token rotation, Google OAuth, JWKS — the SSO every app delegates to |
 | **[Notes](https://github.com/Meizuno/Notes)** · [Money Manager](https://github.com/Meizuno/MoneyManager) · [Recipes](https://github.com/Meizuno/RecipesBook) | Nuxt · Prisma · Postgres · MCP | Self-hosted apps with shared cookie-SSO and MCP tools exposed to AI Chat |
+| **[Infrastructure](https://github.com/Meizuno/Infrastructure)** | Docker Compose · Traefik · Cloudflare | One-file stack for the whole ecosystem — Cloudflare-tunnel ingress, zero-downtime `docker rollout` deploys, VictoriaLogs + Vector logs, SeaweedFS S3 |
 
 ### 🏗️ Infrastructure
 
