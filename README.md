@@ -82,6 +82,45 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 | **[Notes](https://github.com/Meizuno/Notes)** · [Money Manager](https://github.com/Meizuno/MoneyManager) · [Recipes](https://github.com/Meizuno/RecipesBook) | Nuxt · Prisma · Postgres · MCP | Self-hosted apps with shared cookie-SSO and MCP tools exposed to AI Chat |
 | **[Infrastructure](https://github.com/Meizuno/Infrastructure)** | Docker Compose · Traefik · Cloudflare | One-file stack for the whole ecosystem — Cloudflare-tunnel ingress, zero-downtime `docker rollout` deploys, VictoriaLogs + Vector logs, SeaweedFS S3 |
 
+### 🎬 In action
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://github.com/Meizuno/MoneyManager"><b>💸 Money Manager</b></a><br/>
+      <sub>Cashflow overview, budget targets &amp; one-tap entry</sub><br/><br/>
+      <a href="https://github.com/Meizuno/MoneyManager"><img src="https://raw.githubusercontent.com/Meizuno/MoneyManager/main/preview/demo.gif" alt="Money Manager demo" width="100%"/></a>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/Meizuno/AIChat"><b>🤖 AI Chat</b></a><br/>
+      <sub>Streaming LLM hub wired to my apps over MCP</sub><br/><br/>
+      <a href="https://github.com/Meizuno/AIChat"><img src="https://raw.githubusercontent.com/Meizuno/AIChat/main/preview/demo.gif" alt="AI Chat demo" width="100%"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="https://github.com/Meizuno/Notes"><b>📓 Notes</b></a><br/>
+      <sub>Obsidian-style knowledge graph, Markdown &amp; sharing</sub><br/><br/>
+      <a href="https://github.com/Meizuno/Notes"><img src="https://raw.githubusercontent.com/Meizuno/Notes/main/preview/demo.gif" alt="Notes demo" width="100%"/></a>
+    </td>
+    <td valign="top">
+      <a href="https://github.com/Meizuno/RecipesBook"><b>🍳 Recipes</b></a><br/>
+      <sub>Searchable cookbook with tags &amp; favorites</sub><br/><br/>
+      <a href="https://github.com/Meizuno/RecipesBook"><img src="https://raw.githubusercontent.com/Meizuno/RecipesBook/main/preview/demo.gif" alt="Recipes demo" width="100%"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="https://github.com/Meizuno/Calories"><b>🥗 Calories</b></a><br/>
+      <sub>Macro diary with a live kcal ring &amp; food catalog</sub><br/><br/>
+      <a href="https://github.com/Meizuno/Calories"><img src="https://raw.githubusercontent.com/Meizuno/Calories/main/preview/demo.gif" alt="Calories demo" width="100%"/></a>
+    </td>
+    <td valign="top"></td>
+  </tr>
+</table>
+
+> <sub>Recorded locally against the full stack (Docker Compose · Postgres · cookie-SSO). Each clip &amp; its full-resolution MP4 live in that app's <code>preview/</code> folder.</sub>
+
 ### 🏗️ Infrastructure
 
 A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), a self-hosted **SeaweedFS** S3-compatible store, and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, D1, and R2**.
