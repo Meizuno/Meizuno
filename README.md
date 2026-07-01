@@ -84,42 +84,27 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 ### 🎬 In action
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/Meizuno/MoneyManager"><b>💸 Money Manager</b></a><br/>
-      <sub>Cashflow overview, budget targets &amp; one-tap entry</sub><br/><br/>
-      <a href="https://github.com/Meizuno/MoneyManager"><img src="https://raw.githubusercontent.com/Meizuno/MoneyManager/main/preview/demo.gif" alt="Money Manager demo" width="100%"/></a>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/Meizuno/AIChat"><b>🤖 AI Chat</b></a><br/>
-      <sub>Streaming LLM hub wired to my apps over MCP</sub><br/><br/>
-      <a href="https://github.com/Meizuno/AIChat"><img src="https://raw.githubusercontent.com/Meizuno/AIChat/main/preview/demo.gif" alt="AI Chat demo" width="100%"/></a>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://github.com/Meizuno/Notes"><b>📓 Notes</b></a><br/>
-      <sub>Obsidian-style knowledge graph, Markdown &amp; sharing</sub><br/><br/>
-      <a href="https://github.com/Meizuno/Notes"><img src="https://raw.githubusercontent.com/Meizuno/Notes/main/preview/demo.gif" alt="Notes demo" width="100%"/></a>
-    </td>
-    <td valign="top">
-      <a href="https://github.com/Meizuno/RecipesBook"><b>🍳 Recipes</b></a><br/>
-      <sub>Searchable cookbook with tags &amp; favorites</sub><br/><br/>
-      <a href="https://github.com/Meizuno/RecipesBook"><img src="https://raw.githubusercontent.com/Meizuno/RecipesBook/main/preview/demo.gif" alt="Recipes demo" width="100%"/></a>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      <a href="https://github.com/Meizuno/Calories"><b>🥗 Calories</b></a><br/>
-      <sub>Macro diary with a live kcal ring &amp; food catalog</sub><br/><br/>
-      <a href="https://github.com/Meizuno/Calories"><img src="https://raw.githubusercontent.com/Meizuno/Calories/main/preview/demo.gif" alt="Calories demo" width="100%"/></a>
-    </td>
-    <td valign="top"></td>
-  </tr>
-</table>
+#### 💸 [Money Manager](https://github.com/Meizuno/MoneyManager) — cashflow overview, budget targets & one-tap entry
 
-> <sub>Recorded locally against the full stack (Docker Compose · Postgres · cookie-SSO). Each clip &amp; its full-resolution MP4 live in that app's <code>preview/</code> folder.</sub>
+<a href="https://github.com/Meizuno/MoneyManager"><img src="https://raw.githubusercontent.com/Meizuno/MoneyManager/main/preview/demo.gif" alt="Money Manager demo" width="100%"/></a>
+
+#### 🤖 [AI Chat](https://github.com/Meizuno/AIChat) — streaming LLM hub that drives my apps over MCP
+
+<a href="https://github.com/Meizuno/AIChat"><img src="https://raw.githubusercontent.com/Meizuno/AIChat/main/preview/demo.gif" alt="AI Chat demo — calling MCP tools" width="100%"/></a>
+
+#### 📓 [Notes](https://github.com/Meizuno/Notes) — Obsidian-style knowledge graph, Markdown & sharing
+
+<a href="https://github.com/Meizuno/Notes"><img src="https://raw.githubusercontent.com/Meizuno/Notes/main/preview/demo.gif" alt="Notes demo" width="100%"/></a>
+
+#### 🍳 [Recipes](https://github.com/Meizuno/RecipesBook) — searchable cookbook with tags & favorites
+
+<a href="https://github.com/Meizuno/RecipesBook"><img src="https://raw.githubusercontent.com/Meizuno/RecipesBook/main/preview/demo.gif" alt="Recipes demo" width="100%"/></a>
+
+#### 🥗 [Calories](https://github.com/Meizuno/Calories) — macro diary with a live kcal ring & food catalog
+
+<a href="https://github.com/Meizuno/Calories"><img src="https://raw.githubusercontent.com/Meizuno/Calories/main/preview/demo.gif" alt="Calories demo" width="100%"/></a>
+
+> <sub>Recorded locally against the full stack (Docker Compose · Postgres · cookie-SSO). Each clip & its full-resolution MP4 live in that app's <code>preview/</code> folder.</sub>
 
 ### 🏗️ Infrastructure
 
