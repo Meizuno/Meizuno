@@ -110,6 +110,22 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), a self-hosted **SeaweedFS** S3-compatible store, and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, D1, and R2**.
 
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/architecture.png" alt="meizuno infrastructure — Cloudflare → Traefik → apps → Postgres, with observability, backups, delivery and secrets" width="100%"/></a>
+
+#### 📊 [Status page](https://status.meizuno.com/status/meizuno) — Uptime Kuma, all systems operational
+
+<a href="https://status.meizuno.com/status/meizuno"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/status.gif" alt="Uptime Kuma status page — live heartbeats for every service" width="100%"/></a>
+
+#### 🔭 [Centralized logs](https://github.com/Meizuno/Infrastructure) — Vector → VictoriaLogs, queried with LogsQL
+
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/logs.gif" alt="VictoriaLogs — LogsQL query and per-service aggregation" width="100%"/></a>
+
+#### 💾 [Backups](https://github.com/Meizuno/Infrastructure) — nightly pg_dumpall → age-encrypted → R2, restore auto-verified
+
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/backup.gif" alt="Backup and restore-verification pipeline" width="100%"/></a>
+
+> <sub>Recorded against the stack running locally. Full-resolution MP4s live in the <a href="https://github.com/Meizuno/Infrastructure/tree/main/preview">Infrastructure <code>preview/</code></a> folder.</sub>
+
 ---
 
 [![Portfolio](https://img.shields.io/badge/portfolio-meizuno.com-000000?style=for-the-badge&logo=safari&logoColor=white)](https://meizuno.com/)
