@@ -56,7 +56,7 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 ![GitLab CI/CD](https://img.shields.io/badge/GitLab_CI%2FCD-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)
-![SeaweedFS](https://img.shields.io/badge/SeaweedFS_(S3)-1E90FF?style=for-the-badge)
+![Cloudflare R2](https://img.shields.io/badge/Cloudflare_R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 
 ### 📊 Observability & Testing
 
@@ -80,7 +80,7 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 | **[AI Chat](https://github.com/Meizuno/AIChat)** | Nuxt · OpenAI · MCP | LLM chat hub that drives my other apps as **MCP tools** — streaming completions, per-user connection pooling |
 | **[Authentication](https://github.com/Meizuno/Authentication)** | Go · Gin · JWT | Auth microservice: JWT + refresh-token rotation, Google OAuth, JWKS — the SSO every app delegates to |
 | **[Notes](https://github.com/Meizuno/Notes)** · [Money Manager](https://github.com/Meizuno/MoneyManager) · [Recipes](https://github.com/Meizuno/RecipesBook) | Nuxt · Prisma · Postgres · MCP | Self-hosted apps with shared cookie-SSO and MCP tools exposed to AI Chat |
-| **[Infrastructure](https://github.com/Meizuno/Infrastructure)** | Docker Compose · Traefik · Cloudflare | One-file stack for the whole ecosystem — Cloudflare-tunnel ingress, zero-downtime `docker rollout` deploys, VictoriaLogs + Vector logs, SeaweedFS S3 |
+| **[Infrastructure](https://github.com/Meizuno/Infrastructure)** | Docker Compose · Traefik · Cloudflare | One-file stack for the whole ecosystem — Cloudflare-tunnel ingress, zero-downtime `docker rollout` deploys, VictoriaLogs + Vector logs, age-encrypted backups to Cloudflare R2 |
 
 ### 🎬 In action
 
@@ -108,7 +108,7 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 ### 🏗️ Infrastructure
 
-A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), a self-hosted **SeaweedFS** S3-compatible store, and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, D1, and R2**.
+A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), nightly **age-encrypted backups to Cloudflare R2** (restore auto-verified), and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, and D1**.
 
 <a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/architecture.png" alt="meizuno infrastructure — Cloudflare → Traefik → apps → Postgres, with observability, backups, delivery and secrets" width="100%"/></a>
 
