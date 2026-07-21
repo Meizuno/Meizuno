@@ -120,9 +120,17 @@ A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a 
 
 <a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/logs.gif" alt="VictoriaLogs — LogsQL query and per-service aggregation" width="100%"/></a>
 
+#### 📈 [Resource metrics](https://beszel.meizuno.com) — Beszel, per-host & per-container CPU/RAM/disk/net
+
+<a href="https://beszel.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/beszel.gif" alt="Beszel dashboard — CPU, memory, disk and network time-series for the host and each Docker container" width="100%"/></a>
+
 #### 💾 [Backups](https://github.com/Meizuno/Infrastructure) — nightly pg_dumpall → age-encrypted → R2, restore auto-verified
 
 <a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/backup.gif" alt="Backup and restore-verification pipeline" width="100%"/></a>
+
+#### 🏠 [Dashboard](https://home.meizuno.com) — Homepage, one landing page for every service
+
+<a href="https://home.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/homepage.gif" alt="Homepage dashboard — Apps and Infrastructure in two columns, host CPU/RAM/disk and a live up/down dot on every tile" width="100%"/></a>
 
 > <sub>Recorded against the stack running locally. Full-resolution MP4s live in the <a href="https://github.com/Meizuno/Infrastructure/tree/main/preview">Infrastructure <code>preview/</code></a> folder.</sub>
 
