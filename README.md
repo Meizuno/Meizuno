@@ -71,6 +71,34 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 ---
 
+### 🏗️ Infrastructure
+
+A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), nightly **age-encrypted backups to Cloudflare R2** (restore auto-verified), and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, and D1**.
+
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/architecture.png" alt="meizuno infrastructure — Cloudflare → Traefik → apps → Postgres, with observability, backups, delivery and secrets" width="100%"/></a>
+
+#### 🏠 [Dashboard](https://home.meizuno.com) — Homepage, one landing page for every service
+
+<a href="https://home.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/homepage.gif" alt="Homepage dashboard — Apps and Infrastructure in two columns, host CPU/RAM/disk and a live up/down dot on every tile" width="100%"/></a>
+
+#### 📈 [Resource metrics](https://beszel.meizuno.com) — Beszel, per-host & per-container CPU/RAM/disk/net
+
+<a href="https://beszel.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/beszel.gif" alt="Beszel dashboard — CPU, memory, disk and network time-series for the host and each Docker container" width="100%"/></a>
+
+#### 📊 [Status page](https://status.meizuno.com/status/meizuno) — Uptime Kuma, all systems operational
+
+<a href="https://status.meizuno.com/status/meizuno"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/status.gif" alt="Uptime Kuma status page — live heartbeats for every service" width="100%"/></a>
+
+#### 🔭 [Centralized logs](https://github.com/Meizuno/Infrastructure) — Vector → VictoriaLogs, queried with LogsQL
+
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/logs.gif" alt="VictoriaLogs — LogsQL query and per-service aggregation" width="100%"/></a>
+
+#### 💾 [Backups](https://github.com/Meizuno/Infrastructure) — nightly pg_dumpall → age-encrypted → R2, restore auto-verified
+
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/backup.gif" alt="Backup and restore-verification pipeline" width="100%"/></a>
+
+> <sub>Recorded against the stack running locally. Full-resolution MP4s live in the <a href="https://github.com/Meizuno/Infrastructure/tree/main/preview">Infrastructure <code>preview/</code></a> folder.</sub>
+
 ### 🚀 Featured projects
 
 | Project | Stack | What it shows |
@@ -105,34 +133,6 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 <a href="https://github.com/Meizuno/Calories"><img src="https://raw.githubusercontent.com/Meizuno/Calories/main/preview/demo.gif" alt="Calories demo" width="100%"/></a>
 
 > <sub>Recorded locally against the full stack (Docker Compose · Postgres · cookie-SSO). Each clip & its full-resolution MP4 live in that app's <code>preview/</code> folder.</sub>
-
-### 🏗️ Infrastructure
-
-A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), nightly **age-encrypted backups to Cloudflare R2** (restore auto-verified), and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, and D1**.
-
-<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/architecture.png" alt="meizuno infrastructure — Cloudflare → Traefik → apps → Postgres, with observability, backups, delivery and secrets" width="100%"/></a>
-
-#### 🏠 [Dashboard](https://home.meizuno.com) — Homepage, one landing page for every service
-
-<a href="https://home.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/homepage.gif" alt="Homepage dashboard — Apps and Infrastructure in two columns, host CPU/RAM/disk and a live up/down dot on every tile" width="100%"/></a>
-
-#### 📈 [Resource metrics](https://beszel.meizuno.com) — Beszel, per-host & per-container CPU/RAM/disk/net
-
-<a href="https://beszel.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/beszel.gif" alt="Beszel dashboard — CPU, memory, disk and network time-series for the host and each Docker container" width="100%"/></a>
-
-#### 📊 [Status page](https://status.meizuno.com/status/meizuno) — Uptime Kuma, all systems operational
-
-<a href="https://status.meizuno.com/status/meizuno"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/status.gif" alt="Uptime Kuma status page — live heartbeats for every service" width="100%"/></a>
-
-#### 🔭 [Centralized logs](https://github.com/Meizuno/Infrastructure) — Vector → VictoriaLogs, queried with LogsQL
-
-<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/logs.gif" alt="VictoriaLogs — LogsQL query and per-service aggregation" width="100%"/></a>
-
-#### 💾 [Backups](https://github.com/Meizuno/Infrastructure) — nightly pg_dumpall → age-encrypted → R2, restore auto-verified
-
-<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/backup.gif" alt="Backup and restore-verification pipeline" width="100%"/></a>
-
-> <sub>Recorded against the stack running locally. Full-resolution MP4s live in the <a href="https://github.com/Meizuno/Infrastructure/tree/main/preview">Infrastructure <code>preview/</code></a> folder.</sub>
 
 ---
 
