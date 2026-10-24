@@ -2,7 +2,7 @@
 
 **Lead Developer @ [Dlubal Software](https://www.dlubal.com)** · Prague, Czechia 🇨🇿
 
-Full-stack engineer focused on **clean architecture**, **type-safe end-to-end systems**, and **self-hosted infrastructure**. I build production backends in **Go** and **Python**, reactive frontends with **Nuxt / Vue**, and run my own ecosystem of apps on a Cloudflare-fronted VPS — shipped through Docker + GitHub Actions, with apps wired to LLMs over the **Model Context Protocol (MCP)**.
+Full-stack engineer focused on **clean architecture**, **type-safe end-to-end systems**, and **self-hosted infrastructure**. I build production backends in **Go** and **Python**, reactive frontends with **Nuxt / Vue**, and run my own ecosystem of apps on a Cloudflare-fronted VPS — shipped through Docker + GitHub Actions, observed end to end in Grafana, with apps wired to LLMs over the **Model Context Protocol (MCP)** and their own tool-calling assistants.
 
 ---
 
@@ -26,6 +26,7 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 ![Vue](https://img.shields.io/badge/Vue-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
 ![Nuxt](https://img.shields.io/badge/Nuxt-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 ### 🗄️ Databases & ORMs
@@ -60,8 +61,11 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 ### 📊 Observability & Testing
 
-![VictoriaLogs](https://img.shields.io/badge/VictoriaLogs-621773?style=for-the-badge&logo=victoriametrics&logoColor=white)
-![Vector](https://img.shields.io/badge/Vector-FFD200?style=for-the-badge&logo=vector&logoColor=black)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![VictoriaMetrics](https://img.shields.io/badge/VictoriaMetrics-621773?style=for-the-badge&logo=victoriametrics&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![Loki](https://img.shields.io/badge/Loki-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Pyroscope](https://img.shields.io/badge/Pyroscope-F46800?style=for-the-badge&logo=grafana&logoColor=white)
 ![Uptime Kuma](https://img.shields.io/badge/Uptime_Kuma-5CDD8B?style=for-the-badge)
 ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
@@ -73,31 +77,23 @@ Full-stack engineer focused on **clean architecture**, **type-safe end-to-end sy
 
 ### 🏗️ Infrastructure
 
-A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel**, with **zero-downtime deploys** (docker-rollout), centralized logs (**VictoriaLogs + Vector**), nightly **age-encrypted backups to Cloudflare R2** (restore auto-verified), and **Uptime-Kuma** monitoring. Images built by GitHub Actions → GHCR → pulled on deploy. Also hands-on with Cloudflare **Pages, Workers, and D1**.
+A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a **Cloudflare Tunnel** — no host ports, internal tools behind **Cloudflare Access**. Deploys are **zero-downtime at one replica** (`docker rollout`: health-gated, drained cutover); images are built by GitHub Actions → GHCR. **Grafana** watches all of it: metrics in **VictoriaMetrics**, logs through **Alloy → Loki**, and **Pyroscope** CPU and memory profiles by function, with per-route p50/p95 for the FastAPI apps. **Uptime Kuma** checks every service and alerts. Postgres is dumped nightly, **age-encrypted to Cloudflare R2**, and restored into a throwaway server every night to prove it restores. Secrets sit in git encrypted with **SOPS + age**. Also hands-on with Cloudflare **Pages, Workers, and D1**.
 
-<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/architecture.png" alt="meizuno infrastructure — Cloudflare → Traefik → apps → Postgres, with observability, backups, delivery and secrets" width="100%"/></a>
-
-#### 🏠 [Dashboard](https://home.meizuno.com) — Homepage, one landing page for every service
-
-<a href="https://home.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/homepage.gif" alt="Homepage dashboard — Apps and Infrastructure in two columns, host CPU/RAM/disk and a live up/down dot on every tile" width="100%"/></a>
-
-#### 📈 [Resource metrics](https://beszel.meizuno.com) — Beszel, per-host & per-container CPU/RAM/disk/net
-
-<a href="https://beszel.meizuno.com"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/beszel.gif" alt="Beszel dashboard — CPU, memory, disk and network time-series for the host and each Docker container" width="100%"/></a>
+<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/architecture.png" alt="meizuno infrastructure — Cloudflare → cloudflared → Traefik → apps → Postgres and Redis, with observability, backups, delivery, secrets and the Access-gated tooling" width="100%"/></a>
 
 #### 📊 [Status page](https://status.meizuno.com/status/meizuno) — Uptime Kuma, all systems operational
 
 <a href="https://status.meizuno.com/status/meizuno"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/status.gif" alt="Uptime Kuma status page — live heartbeats for every service" width="100%"/></a>
 
-#### 🔭 [Centralized logs](https://github.com/Meizuno/Infrastructure) — Vector → VictoriaLogs, queried with LogsQL
-
-<a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/logs.gif" alt="VictoriaLogs — LogsQL query and per-service aggregation" width="100%"/></a>
-
-#### 💾 [Backups](https://github.com/Meizuno/Infrastructure) — nightly pg_dumpall → age-encrypted → R2, restore auto-verified
+#### 💾 [Backups](https://github.com/Meizuno/Infrastructure) — nightly pg_dumpall → age-encrypted → R2, restore verified every night
 
 <a href="https://github.com/Meizuno/Infrastructure"><img src="https://raw.githubusercontent.com/Meizuno/Infrastructure/main/preview/backup.gif" alt="Backup and restore-verification pipeline" width="100%"/></a>
 
-> <sub>Recorded against the stack running locally. Full-resolution MP4s live in the <a href="https://github.com/Meizuno/Infrastructure/tree/main/preview">Infrastructure <code>preview/</code></a> folder.</sub>
+#### 🧑‍💻 [Code Server](https://github.com/Meizuno/Code-Server) — VS Code in the browser with its own rootless Docker, behind Cloudflare Access
+
+<a href="https://github.com/Meizuno/Code-Server"><img src="https://raw.githubusercontent.com/Meizuno/Code-Server/main/preview/demo.gif" alt="Code-Server demo — editing in the browser, then the in-container Docker daemon and running the service" width="100%"/></a>
+
+> <sub>Full-resolution MP4s live in the <a href="https://github.com/Meizuno/Infrastructure/tree/main/preview">Infrastructure</a> and <a href="https://github.com/Meizuno/Code-Server/tree/main/preview">Code-Server</a> <code>preview/</code> folders.</sub>
 
 ### 🚀 Featured projects
 
@@ -105,10 +101,13 @@ A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a 
 |---|---|---|
 | **[Library](https://github.com/Meizuno/Library)** | Python · FastAPI · SQLAlchemy · Redis | Clean Architecture / DDD reference — 400+ tests that *enforce* the dependency rule, contract-tested ports, Argon2 + JWT |
 | **[Docket](https://github.com/Meizuno/Docket)** | Python · FastAPI · Postgres | Pull-based task queue with lease + heartbeat crash recovery, `FOR UPDATE SKIP LOCKED`, testcontainers — no Redis/Celery |
-| **[AI Chat](https://github.com/Meizuno/AIChat)** | Nuxt · OpenAI · MCP | LLM chat hub that drives my other apps as **MCP tools** — streaming completions, per-user connection pooling |
-| **[Authentication](https://github.com/Meizuno/Authentication)** | Go · Gin · JWT | Auth microservice: JWT + refresh-token rotation, Google OAuth, JWKS — the SSO every app delegates to |
+| **[Forma](https://forma.meizuno.com)** <sub>live · private repo</sub> | Python · FastAPI · Vue · OpenAI | Food & body diary with an **AI assistant** that logs meals through tools — scans a packet's barcode or its nutrition table, reads body-composition results, shares foods by QR; evals run whole conversations against the real model |
+| **[English](https://english.meizuno.com)** <sub>live · private repo</sub> | Python · FastAPI · Vue · OpenAI | Short daily English sessions — exercises generated as JSON with OpenAI **structured outputs**, checked in the client, every session stored for personalisation |
+| **[AI Chat](https://github.com/Meizuno/AIChat)** | Nuxt · OpenAI · MCP | LLM chat hub that drives my other apps as **MCP tools** — streaming completions, per-user connection pooling, a network-less Python sandbox for `run_code` |
+| **[Authentication](https://github.com/Meizuno/Authentication)** | Go · Gin · JWT | Auth microservice: JWT + refresh-token rotation, Google OAuth, JWKS — the SSO the Nuxt apps delegate to |
 | **[Notes](https://github.com/Meizuno/Notes)** · [Money Manager](https://github.com/Meizuno/MoneyManager) · [Recipes](https://github.com/Meizuno/RecipesBook) | Nuxt · Prisma · Postgres · MCP | Self-hosted apps with shared cookie-SSO and MCP tools exposed to AI Chat |
-| **[Infrastructure](https://github.com/Meizuno/Infrastructure)** | Docker Compose · Traefik · Cloudflare | One-file stack for the whole ecosystem — Cloudflare-tunnel ingress, zero-downtime `docker rollout` deploys, VictoriaLogs + Vector logs, age-encrypted backups to Cloudflare R2 |
+| **[Infrastructure](https://github.com/Meizuno/Infrastructure)** | Docker Compose · Traefik · Cloudflare | One stack for the whole ecosystem — Cloudflare-tunnel ingress, zero-downtime `docker rollout` deploys, Grafana over metrics, logs and profiles, nightly backups to R2 that are restored before they count |
+| **[Code-Server](https://github.com/Meizuno/Code-Server)** | Docker · rootless DinD · Cloudflare Access | VS Code in the browser with its own rootless Docker daemon — builds and devcontainers on the VPS, isolated from the host and the production stack |
 
 ### 🎬 In action
 
@@ -127,10 +126,6 @@ A single Docker Compose stack runs the whole ecosystem behind **Traefik** and a 
 #### 🍳 [Recipes](https://github.com/Meizuno/RecipesBook) — searchable cookbook with tags & favorites
 
 <a href="https://github.com/Meizuno/RecipesBook"><img src="https://raw.githubusercontent.com/Meizuno/RecipesBook/main/preview/demo.gif" alt="Recipes demo" width="100%"/></a>
-
-#### 🥗 [Calories](https://github.com/Meizuno/Calories) — macro diary with a live kcal ring & food catalog
-
-<a href="https://github.com/Meizuno/Calories"><img src="https://raw.githubusercontent.com/Meizuno/Calories/main/preview/demo.gif" alt="Calories demo" width="100%"/></a>
 
 > <sub>Recorded locally against the full stack (Docker Compose · Postgres · cookie-SSO). Each clip & its full-resolution MP4 live in that app's <code>preview/</code> folder.</sub>
 
